@@ -14,7 +14,7 @@ to automate the download from them.
 
 ### REQUIRED
 
-* vmware_workstation_artifactory: The DNS name of your Artifactory server.
+* vmware_workstation_artifactory: The DNS name of your Artifactory server to download the VMware Workstation Pro bundle from.
 * vmware_workstation_serial_num: The serial number with dashes from your VMware Workstation license. Be sure you vault this. 
 
 ### OPTIONAL
@@ -22,9 +22,6 @@ to automate the download from them.
 * vmware_workstation_version: The version of VMware Workstation Pro to install.
 * vmware_workstation_build: The build number of VMware Workstation Pro to install.
 * vmware_workstation_checksum: The checksum of the VMware Workstation Pro bundle.
-* vmware_workstation_artifactory: The Artifactory DNS name to download the VMware Workstation 
-  Prod bundle from. VMWare does not make this binary publicly available so you have to store it somewhere
-  in artifactory and download it from there.
 
 ## Dependencies
 
