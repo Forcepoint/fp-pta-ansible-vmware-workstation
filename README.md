@@ -32,7 +32,7 @@ None
 
     - hosts: servers
       vars:
-        vmware_workstation_artifactory: https://artifactory.COMPANY.com/artifactory/software/VMware/VMware-Workstation-Full-14.1.2-8497320.x86_64.bundle
+        vmware_workstation_download_url: https://artifactory.COMPANY.com/artifactory/software/VMware/VMware-Workstation-Full-14.1.2-8497320.x86_64.bundle
         vmware_workstation_checksum: sha256:8932c681a8954c4aaf0e7d0039c6d8dff9ade323170d9a9a78553c98ffe16963
         vmware_workstation_serial_num: "xxxxx-xxxxx-xxxxx-xxxxx-xxxxx"
         vmware_workstation_version: 14.1.2
