@@ -1,0 +1,4 @@
+---
+# vars file for vmware-workstation
+
+vmware_workstation_serial_num_unvaulted: "{{ vmware_workstation_serial_num }}"

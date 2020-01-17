@@ -1,0 +1,7 @@
+---
+# defaults file for vmware-workstation
+
+# https://my.vmware.com/web/vmware/info/slug/desktop_end_user_computing/vmware_workstation_pro/14_0
+vmware_workstation_version: 14.1.2
+vmware_workstation_build: 8497320
+vmware_workstation_checksum: sha256:8932c681a8954c4aaf0e7d0039c6d8dff9ade323170d9a9a78553c98ffe16963
