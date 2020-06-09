@@ -2,6 +2,8 @@
 
 Install VMware Workstation.
 
+For information about PTA and how to use it with this Ansible role please visit https://github.com/Forcepoint/fp-pta-overview/blob/master/README.md
+
 ## Requirements
 
 You must host the VMware Workstation Pro bundle on a web server. Doing so with Artifactory in a local
