@@ -34,6 +34,13 @@
     mode: 0764
   when: workstation_versions_match.rc != 0
 
+- name: install ncurses-compat-libs
+  become: yes
+  ansible.builtin.dnf:
+    name: ncurses-compat-libs
+    state: latest
+  when: ansible_distribution == "CentOS" and ansible_distribution_major_version > '7'
+
 - name: install the bundle
   # https://docs.vmware.com/en/VMware-Workstation-Pro/14.0/com.vmware.ws.using.doc/GUID-42F4754B-7547-4A4D-AC08-353D321A051B.html
   become: yes
