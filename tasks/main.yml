@@ -3,32 +3,32 @@
 
 - name: install kernel-headers
   become: yes
-  yum:
+  ansible.builtin.yum:
     name: kernel-devel
     state: latest
   register: yum_kernel
 
 - name: install development tools
   become: yes
-  yum:
+  ansible.builtin.yum:
     name: '@Development Tools'
     state: latest
 
 - name: check VMware Workstation version
-  shell: "vmware -v 2>&1 | grep '{{ vmware_workstation_version }}'"
+  ansible.builtin.shell: "vmware -v 2>&1 | grep '{{ vmware_workstation_version }}'"
   failed_when: false
   changed_when: false
   register: workstation_versions_match
 
 - name: download VMware Workstation {{ vmware_workstation_version }}
-  get_url:
+  ansible.builtin.get_url:
     url: "{{ vmware_workstation_download_url }}"
     dest: /tmp/VMware-Workstation.bundle
     checksum: "{{ vmware_workstation_checksum }}"
   when: workstation_versions_match.rc != 0
 
 - name: set permissions on the bundle
-  file:
+  ansible.builtin.file:
     path: /tmp/VMware-Workstation.bundle
     state: file
     mode: 0764
@@ -44,6 +44,6 @@
 - name: install the bundle
   # https://docs.vmware.com/en/VMware-Workstation-Pro/14.0/com.vmware.ws.using.doc/GUID-42F4754B-7547-4A4D-AC08-353D321A051B.html
   become: yes
-  command: "/tmp/VMware-Workstation.bundle --eulas-agreed --required --set-setting vmware-workstation serialNumber {{ vmware_workstation_serial_num_unvaulted }}"
+  ansible.builtin.command: "/tmp/VMware-Workstation.bundle --eulas-agreed --required --set-setting vmware-workstation serialNumber {{ vmware_workstation_serial_num_unvaulted }}"
   no_log: yes
   when: workstation_versions_match.rc != 0
